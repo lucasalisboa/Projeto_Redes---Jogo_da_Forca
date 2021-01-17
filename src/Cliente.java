@@ -9,7 +9,7 @@ public class Cliente {
 
 		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
-		Socket socketNewClient = new Socket("localhost", 666);
+		Socket socketNewClient = new Socket("localhost", 1234);
 
 		DataOutputStream outputServer = new DataOutputStream(socketNewClient.getOutputStream());
 
