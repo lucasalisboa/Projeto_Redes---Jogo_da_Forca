@@ -40,28 +40,28 @@ public class ClienteThread implements Runnable{
         try{
             inFromGame = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
             outToGame = new DataOutputStream(connectionSocket.getOutputStream());
-            outToGame.writeBytes("Jogo da Forca");
-            outToGame.writeBytes("Tema: Redes de Computadores");
-            outToGame.writeBytes("Numero de letras:"+ gameSentence.length());
-            outToGame.writeInt(gameSentence.length());
+            outToGame.writeBytes("Jogo da Forca"+'\n');
+            outToGame.writeBytes("Tema: Redes de Computadores"+'\n');
+            outToGame.writeBytes("Numero de letras:"+ gameSentence.length()+'\n');
             for (int i = 0 ; i < gameSentence.length(); i++){
                 letters.add('_');
             }  
             while(count_lifes < 3){
                 for (int i = 0 ; i < gameSentence.length(); i++){
-                    outToGame.writeChar(letters.get(i));
-                }    
+                    outToGame.writeUTF(letters.get(i) + " ");
+                }
+                outToGame.writeByte('\n');
                 if(count_letters == 0)
                 {
                     break;
                 }
                 else{
-                    outToGame.writeUTF("Digite uma letra");
+                    outToGame.writeUTF("Digite uma letra"+'\n');
                     readCliente = inFromGame.readLine(); 
                     readCliente = readCliente.toLowerCase();
                     if (readCliente.trim().length() == 1){
                         if (gameSentence.contains(readCliente)){
-                            outToGame.writeUTF("Letra correta");
+                            outToGame.writeUTF("Letra correta"+ '\n');
                             for(int i = 0; i < verify.length; i++){
                                 if(verify[i] == readCliente.charAt(0))
                                 {
@@ -71,12 +71,12 @@ public class ClienteThread implements Runnable{
                             }    
                         }
                         else{
-                            outToGame.writeUTF("Letra incorreta");
+                            outToGame.writeUTF("Letra incorreta"+'\n');
                             count_lifes++;
                         }
                     }
                     else{
-                        outToGame.writeUTF("Digite apenas uma letra");
+                        outToGame.writeUTF("Digite apenas uma letra"+'\n');
                         count_lifes++;                  
                     }    
                 }
@@ -88,7 +88,9 @@ public class ClienteThread implements Runnable{
             else{
                 msg = "Que pena! Voce perdeu!";
             }
-            outToGame.writeUTF(msg);
+            outToGame.writeBytes(msg + '\n');
+            inFromGame.close();
+            outToGame.close();
         }
         catch (Exception e){
             e.printStackTrace();

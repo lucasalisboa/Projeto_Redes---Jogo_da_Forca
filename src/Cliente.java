@@ -18,24 +18,27 @@ public class Cliente {
         System.out.println(inFromServer.readLine());
         System.out.println(inFromServer.readLine());
         System.out.println(inFromServer.readLine());
-        int count_letters = inFromServer.read();
         String msg;
 
         while(true){
-            for(int i = 0; i < count_letters; i++){
-                System.out.println(inFromServer.read());
-            }
+            System.out.println(inFromServer.readLine());
             msg = inFromServer.readLine();
             System.out.println(msg);
-            if(msg.equals("Parabens! Voce ganhou!")|| msg.equals("Que pena! Voce perdeu!")){
+            if(msg.equals("Parabens! Voce ganhou!") || msg.equals("Que pena! Voce perdeu!")){
+                System.out.println("ENTROU");
                 break;
             }
+
             sentence = inFromUser.readLine();
 
             outputServer.writeBytes(sentence + '\n');
 
             System.out.println(inFromServer.readLine());
         }
+
+        inFromServer.close();
+        outputServer.close();
+        inFromUser.close();
         socketNewClient.close();
 	}
 }
