@@ -10,8 +10,8 @@ import java.util.Random;
 public class ClienteThread implements Runnable{
     
     private Socket connectionSocket;
-    private ArrayList <String> words;
-    private ArrayList <Character> letters;
+    private ArrayList <String> words = new ArrayList<>();
+    private ArrayList <Character> letters= new ArrayList<>();;
 
     public ClienteThread(Socket s) {
         this.connectionSocket = s;
