@@ -14,7 +14,7 @@ Descrição | Cliente | Servidor
 Iniciar Conexão |`Socket socketNewClient = new Socket("localhost", 1234);`|`Socket connectionSocket = socketServer.accept();`
 Enviar Letra | ```sentence =inFromUser.readLine();  outputServer.writeBytes(sentence + '\n'); ``` | ```readCliente = inFromGame.readLine();  readCliente = readCliente.toLowerCase();```
 Retornar Estado Atual da Palavra | `System.out.println(inFromServer.readLine());` | ```for (int i = 0 ; i <gameSentence.length();i++){  outToGame.writeUTF(letters.get(i) + " ");}  outToGame.writeByte('\n');```
-Retornar Resultado | ```msg =inFromServer.readLine(); System.out.println(msg); if(msg.equals("Parabens! Voce ganhou!") \|\| msg.equals("Que pena! Voce perdeu!")){ break;}``` | ```String msg; if(count_lifes < 3) { msg = "Parabens! Voce ganhou!"; } else{ outToGame.writeBytes("Palavraera:"+gameSentence+'\n');msg ="Que pena! Voceperdeu!";}outToGame.writeBytes(msg + '\n');```
+Retornar Resultado | ```msg =inFromServer.readLine(); System.out.println(msg); if(msg.equals("Parabens! Voce ganhou!") \|\| msg.equals("Que pena! Voce perdeu!")){ break;}``` | ```String msg; if(count_lifes < 3) { msg = "Parabens! Voce ganhou!"; } else{ outToGame.writeBytes("Palavra era:"+gameSentence+'\n'); msg = "Que pena! Voce perdeu!";}  outToGame.writeBytes(msg + '\n');```
 Encerrar Conexão | ```inFromServer.close(); outputServer.close(); inFromUser.close(); socketNewClient.close(); ``` | ```inFromGame.close(); outToGame.close();```
 
 #### Setup
