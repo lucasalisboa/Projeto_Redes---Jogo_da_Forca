@@ -77,7 +77,6 @@ public class ClienteThread implements Runnable{
                     }
                     else{
                         outToGame.writeUTF("Digite apenas uma letra"+'\n');
-                        count_lifes++;                  
                     }    
                 }
             }
@@ -86,6 +85,7 @@ public class ClienteThread implements Runnable{
                 msg = "Parabens! Voce ganhou!";
             }   
             else{
+                outToGame.writeBytes("Palavra era:"+gameSentence+'\n');
                 msg = "Que pena! Voce perdeu!";
             }
             outToGame.writeBytes(msg + '\n');

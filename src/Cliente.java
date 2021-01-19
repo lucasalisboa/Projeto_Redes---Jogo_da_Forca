@@ -20,12 +20,12 @@ public class Cliente {
         System.out.println(inFromServer.readLine());
         String msg;
 
+
         while(true){
             System.out.println(inFromServer.readLine());
             msg = inFromServer.readLine();
             System.out.println(msg);
             if(msg.equals("Parabens! Voce ganhou!") || msg.equals("Que pena! Voce perdeu!")){
-                System.out.println("ENTROU");
                 break;
             }
 
