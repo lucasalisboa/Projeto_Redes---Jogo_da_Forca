@@ -18,10 +18,10 @@ Retornar Resultado | ```msg =inFromServer.readLine(); System.out.println(msg); i
 Encerrar Conexão | ```inFromServer.close(); outputServer.close(); inFromUser.close(); socketNewClient.close(); ``` | ```inFromGame.close(); outToGame.close();```
 
 #### Setup
-. Possuir o pacote JDK 11 instalado na Máquina;
-. Realizar o download da aplicação (`git clone https://github.com/lucasalisboa/Projeto_Redes---Jogo_da_Forca.git`)
-. Após realizar o download, rodar primeiro a classe Server.java e logo em seguida rodar a classe Cliente.java, pode executar mais de uma vez simultaneamente a classe Ciente.java;
-. Iniciar o jogo.
+1. Possuir o pacote JDK 11 instalado na Máquina;
+2. Realizar o download da aplicação (`git clone https://github.com/lucasalisboa/Projeto_Redes---Jogo_da_Forca.git`)
+3. Após realizar o download, rodar primeiro a classe Server.java e logo em seguida rodar a classe Cliente.java, pode executar mais de uma vez simultaneamente a classe Ciente.java;
+4. Iniciar o jogo.
 
 #### Implementações Futuras
 * Interface Gráfica;
