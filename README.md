@@ -12,6 +12,4 @@ Implementação de um jogo com temática da disciplina de Redes de Computadores,
 Descrição | Cliente | Servidor
 ----------| --------| --------
 Iniciar Conexão |`Socket socketNewClient = new Socket("localhost", 1234);`|`Socket connectionSocket = socketServer.accept();`
-Enviar Letra | ```sentence =inFromUser.readLine();
-outputServer.writeBytes(sentence + '\n'); ``` | ```readCliente = inFromGame.readLine();
-                readCliente = readCliente.toLowerCase();```
+Enviar Letra | ```sentence =inFromUser.readLine();outputServer.writeBytes(sentence + '\n'); ``` | ```readCliente = inFromGame.readLine(); readCliente = readCliente.toLowerCase();```
