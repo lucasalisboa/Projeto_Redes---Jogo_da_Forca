@@ -76,7 +76,7 @@ public class ClienteThread implements Runnable{
                         }
                     }
                     else{
-                        outToGame.writeUTF("Digite apenas uma letra (sem acento)"+'\n');
+                        outToGame.writeUTF("Entrada Invalida"+'\n');
                     }    
                 }
             }
