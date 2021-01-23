@@ -8,6 +8,11 @@ Projeto para a disciplina de Redes de Computadores, ministrada pelo professor Le
 #### Descrição do Projeto
 Implementação de um jogo com temática da disciplina de Redes de Computadores, em que o usuário possui até 3 possibilidades de erro para tentar acertar a palavra correspondente. Esta implementação consistiu na utilização de threads, de tal forma que possibilitou a ocorrência simultânea de várias partidas.
 
+O usuário deve fornecer como entrada apenas uma letra (sem acento). Caso seja submetido mais de uma letra, entrada vazia ou letra acentuada, o sistema retorna a mensagem “Entrada invalida”. Nos casos de entradas corretas, o sistema verifica se a letra faz parte da palavra. Caso não pertença, o sistema contabiliza um erro e retorna a mensagem “Letra incorreta”. Caso pertença, o sistema retorna a mensagem “Letra correta”.
+   
+Ao final de cada rodada, o sistema verifica se o jogo encerrou. Se houver 3 erros, o sistema retorna a palavra que deveria ter sido adivinhada, junto da mensagem “Que pena! Voce perdeu!”. Caso todas as letras já tenham sido acertadas, o sistema retorna a mensagem "Parabens! Voce ganhou!". Em ambas as situações, a aplicação do lado do cliente é encerrada.
+
+
 #### Protocolos
 Descrição | Cliente | Servidor
 ----------| --------| --------
