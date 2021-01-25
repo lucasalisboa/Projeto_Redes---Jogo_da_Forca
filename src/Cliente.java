@@ -5,7 +5,7 @@ import java.io.*;
 public class Cliente {
 	public static void main(String argv[]) throws Exception {
 		String sentence;
-		System.out.println("CLIENTE INICIADO.... ");
+		System.out.println("CLIENTE INICIADO... ");
 
 		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
