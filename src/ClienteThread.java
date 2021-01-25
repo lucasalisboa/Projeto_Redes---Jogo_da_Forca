@@ -51,7 +51,7 @@ public class ClienteThread implements Runnable{
                     outToGame.writeUTF(letters.get(i) + " ");
                 }
                 outToGame.writeByte('\n');
-                if(count_letters == 0)
+                if(count_letters <= 0)
                 {
                     break;
                 }
